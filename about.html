@@ -13,7 +13,6 @@
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,9 +30,10 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="bootstrap.min.css" rel="stylesheet" />
-  <link href="paper-kit.css" rel="stylesheet" />
-  
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./assets/css/paper-kit.css?v=2.2.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="./assets/demo/demo.css" rel="stylesheet" />
 </head>
 
 <body class="index-page sidebar-collapse">
@@ -73,34 +73,73 @@ The above copyright notice and this permission notice shall be included in all c
           </li>
            
           <li class="nav-item">
-            <a href="https://github.com/Ronysweb" target="_blank" class="btn btn-primary btn-round">Learn more</a>
+            <a href="https://ronysweb.github.io/ProjectCSS/" target="_blank" class="btn btn-danger btn-round">Learn more</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <!-- End Navbar -->
-  <div class="page-header section-dark" style="background-image: url('antoine-barres.jpg')">
+  <div class="page-header section-dark" style="background-image: url('./assets/img/antoine-barres.jpg')">
     <div class="filter"></div>
     <div class="content-center">
       <div class="container">
         <div class="title-brand">
           <h1 class="presentation-title">Ronald Guidry</h1>
           <div class="fog-low">
-            <!-- <img src="fog-low.png" alt=""> -->
+           <!--  <img src="./assets/img/fog-low.png" alt=""> -->
           </div>
           <div class="fog-low right">
-            <!-- <img src="fog-low.png" alt=""> -->
+            <!-- <img src="./assets/img/fog-low.png" alt=""> -->
           </div>
         </div>
         <h2 class="presentation-subtitle text-center tool">&lt;Web Developer&gt;</h2>
       </div>
     </div>
-    <div class="moving-clouds" style="background-image: url('clouds.png'); "></div>
+    <div class="moving-clouds" style="background-image: url('./assets/img/clouds.png'); "></div>
      
   </div>
-  <script src="jquery.min.js" type="text/javascript"></script>
-    <script src="popper.min.js" type="text/javascript"></script>
-    <script src="bootstrap.min.js" type="text/javascript"></script>
+    <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="./assets/js/plugins/bootstrap-switch.js"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+    <script src="./assets/js/plugins/moment.min.js"></script>
+    <script src="./assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
+    <!-- Control Center for Paper Kit: parallax effects, scripts for the example pages etc -->
+    <script src="./assets/js/paper-kit.js?v=2.2.0" type="text/javascript"></script>
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <script>
+      $(document).ready(function() {
+
+        if ($("#datetimepicker").length != 0) {
+          $('#datetimepicker').datetimepicker({
+            icons: {
+              time: "fa fa-clock-o",
+              date: "fa fa-calendar",
+              up: "fa fa-chevron-up",
+              down: "fa fa-chevron-down",
+              previous: 'fa fa-chevron-left',
+              next: 'fa fa-chevron-right',
+              today: 'fa fa-screenshot',
+              clear: 'fa fa-trash',
+              close: 'fa fa-remove'
+            }
+          });
+        }
+
+        function scrollToDownload() {
+
+          if ($('.section-download').length != 0) {
+            $("html, body").animate({
+              scrollTop: $('.section-download').offset().top
+            }, 1000);
+          }
+        }
+      });
+    </script>
 </body>
-</html>
